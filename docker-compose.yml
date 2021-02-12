@@ -1,0 +1,35 @@
+version: '3.7'
+services:
+  node:
+    container_name: js-node
+    restart: always
+    build: .
+    ports:
+      - 4000:4000
+    links:
+      - db
+    volumes:
+      - .:/usr/src/app
+    env_file:
+      - ./.env.dev
+    command: npm run dev
+    depends_on:
+      - db
+    networks: 
+      - backend
+  db:
+    container_name: js-db
+    build: ./database
+    ports:
+      - 3307:3306
+    logging: 
+      driver: none
+    volumes:
+      - db_data:/data/db
+    networks: 
+      - backend
+volumes: 
+  db_data:
+networks: 
+  backend:
+    driver: bridge
