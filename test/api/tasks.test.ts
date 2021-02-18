@@ -1,15 +1,16 @@
 import supertest from 'supertest';
-import app from '../src/app';
+import app from '../../src/app';
 
 let request: supertest.SuperTest<supertest.Test>;
-const baseUri = '/';
+const baseUri = '/api/tasks';
 beforeAll(() => {
   app;
   request = supertest(app);
 });
 
+// list
 it('should get list resources', async () => {
-  const response = await request.get(`${baseUri}`);
+  const response = await request.get(`${baseUri}/test`);
   expect(response.status).toBe(200);
   expect(response.body).toHaveProperty('message');
 });

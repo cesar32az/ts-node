@@ -4,7 +4,7 @@ module.exports = {
     coveragePathIgnorePatterns: ['node_modules/**'],
     coverageProvider: 'v8',
     moduleFileExtensions: ['js', 'ts'],
-    setupFiles: ['<rootDir>/src/setupTests.ts'],
+    setupFiles: ['<rootDir>/src/config/setupTests.ts'],
     moduleDirectories: ['node_modules', 'utils/tests'],
     testEnvironment: 'node',
     testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],

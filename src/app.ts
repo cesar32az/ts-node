@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // routes
 app.get('/', (req, res) => {
-    res.json({ message: 'Welcome to Typescript api!' });
+  res.json({ message: 'Welcome to Typescript api!' });
 });
 app.use('/api', apiRoutes);
 
